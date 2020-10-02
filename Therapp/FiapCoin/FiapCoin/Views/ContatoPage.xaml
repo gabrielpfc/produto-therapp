@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="THERAPP.Views.ContatoPage"
+    Title="Contato">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="30" BackgroundColor="#c5cefb">
+            <Label Text="Assunto:"  FontSize="Large"></Label>
+            <Picker ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
+            <Label Text="Mensagem:" FontSize="Large"></Label>
+            <Editor x:Name="EditorMensagem"
+                    HeightRequest="300"
+                    FontSize="Large"
+                    BackgroundColor="AliceBlue"></Editor>
+            <Button x:Name="BotaoEnviar"
+                    BackgroundColor="#2296f3"
+                    Text="Enviar"
+                    FontSize="Large"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

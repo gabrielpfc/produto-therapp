@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="THERAPP.Views.QuemSomosPage" 
+             Title="Quem somos">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#c5cefb">
+            <StackLayout Padding="30">
+                
+                <Label  FontSize="Medium"
+                        Text="A Therapp é uma Startup de Terapia e Saúde mental digital que promove serviços para ajudar nossos usuários a se conectarem com profissionais terapeutas à qualquer hora do dia, promovendo uma alternativa ao método tradicional de terapia num valor acessível." x:Name="globalLabel"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

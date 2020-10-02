@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="THERAPP.Views.MeusDadosPage"
+             Title="Meus Dados">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="30" BackgroundColor="#c5cefb">
+
+                <Label Text="Nome:"></Label>
+                <Entry Placeholder="Digite o nome" Text="" ></Entry>
+
+                <Label Text="Sexo:"></Label>
+                <Picker ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
+
+                <Label Text="Email:"></Label>
+                <Entry Placeholder="Digite o e-mail" ></Entry>
+
+                <Label Text="Telefone:"></Label>
+                <Entry Placeholder="Digite o Telefone" Keyboard="Numeric"></Entry>
+
+                <Label Text="CEP:"></Label>
+                <Entry Placeholder="Digite o CEP" Keyboard="Numeric"></Entry>
+
+                <Label Text="Peso:"></Label>
+                <Entry Placeholder="Digite o Peso"  Keyboard="Numeric" ></Entry>
+
+                <Label Text="Idade:"></Label>
+                <Entry Placeholder="Digite a Idade" Keyboard="Numeric" ></Entry>
+
+                <Button Text="Gravar" BackgroundColor="#2296f3"></Button>
+            
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:THERAPP.ViewModel"
+    x:Class="THERAPP.Views.LoginPage"
+    BackgroundColor="#94a8ff"
+    NavigationPage.HasNavigationBar="false">
+   
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="64">
+            <Image Source="logo.png" WidthRequest="110" HeightRequest="110"></Image>
+            
+            <Entry Placeholder="Usuário" 
+                   x:Name="EntryUsuario" 
+                   Text="{Binding Usuario.email}"/>
+            <Entry Placeholder="Senha" 
+                   x:Name="EntrySenha" 
+                   Text="{Binding Usuario.password}" IsPassword="True"/>
+     
+            <Button Text="Entrar" 
+                    BackgroundColor="#576ff4"
+                    Command="{Binding EntrarClickedCommand}" />
+
+            <Button Text="Criar uma conta" 
+                    BackgroundColor="#c5cefb"
+                    Command="{Binding CadastrarClickedCommand}" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

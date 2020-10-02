@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="THERAPP.Views.ConsultasPage"
+    xmlns:vm="clr-namespace:THERAPP.ViewModel"
+    Title="Agendamento">
+
+    <ContentPage.BindingContext>
+        <vm:AtendimentoViewModel></vm:AtendimentoViewModel>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#c5cefb">
+            <StackLayout Padding="50" Opacity="70">
+                <Button Text="Atendimento Emergencial" BackgroundColor="Red" Clicked="CallClicked" TextColor="White" HeightRequest="80"></Button>
+                <Label Text=""></Label>
+                <Label Text="  Minhas Consultas" FontSize="Large"></Label>
+
+                <Label Text="  Nenhuma consulta agendada"></Label>
+                
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#c5cefb">
+                <DatePicker MinimumDate="10/01/2020"
+                            MaximumDate="12/31/2021"/>
+                <TimePicker Time="4:15:26"/>
+                <Label Text="  "></Label>
+                <Button Text="Agendar" BackgroundColor="#2296f3"></Button>
+                <Label Text=""></Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

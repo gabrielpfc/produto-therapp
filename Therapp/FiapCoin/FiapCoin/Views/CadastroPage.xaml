@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="THERAPP.Views.CadastroPage"
+    xmlns:pages="clr-namespace:THERAPP.Views"
+    Title="Cadastro"
+    BackgroundColor="#c5cefb"
+    NavigationPage.HasNavigationBar="false"
+    xmlns:vm="clr-namespace:THERAPP.ViewModel">
+
+  <ContentPage.BindingContext>
+    <vm:CadastroViewModel></vm:CadastroViewModel>
+  </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="35">
+
+                <Label Text="Crie sua conta para começar a usar a THERAPP" FontSize="Large" XAlign="Center" TextColor="#576ff4"></Label>
+                <Entry Placeholder="Email" 
+                       x:Name="EntryEmail" 
+                       Text="{Binding Cliente.email}"/>
+                <Entry Placeholder="Senha" 
+                       x:Name="EntrySenha"
+                       Text="{Binding Cliente.password}" IsPassword="True"/>
+                
+                <StackLayout Padding="10">
+                    <StackLayout>
+                        <Label Text="Dados pessoais" TextColor="#576ff4"></Label>
+                        <Entry Placeholder="Digite o nome" Text="{Binding Cliente.name}" ></Entry>
+                        <StackLayout Spacing="10" Orientation="Horizontal">
+                            <Label Text="Sexo:" AnchorY="-100"></Label>
+                            <Picker WidthRequest="200" ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Peso"/>
+                            <Entry Placeholder="Digite o Peso" WidthRequest="50" Text="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
+                            <Label Text="Idade"/>
+                            <Entry Placeholder="Digite a Idade" WidthRequest="50" Text="{Binding Cliente.age}" Keyboard="Numeric" ></Entry>
+                        </StackLayout>
+                        <Entry Placeholder="Digite o Telefone" Text="{Binding Cliente.number}" Keyboard="Numeric"></Entry>
+                        <Entry Placeholder="Digite o CEP" Text="{Binding Cliente.cep}"  Keyboard="Numeric"></Entry>
+                        <Button Text="Cadastrar" 
+                                BackgroundColor="#2296f3" 
+                                Command="{Binding CadastrarClickedCommand}" />
+                        <Button Text="Voltar" 
+                                BackgroundColor="#c5cefb" 
+                                Command="{Binding VoltarClickedCommand}" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -21,15 +21,14 @@ namespace THERAPP.Layers.Business
         }
 
 
-        public Model.Cliente Get(int _id)
+        public Model.Cliente Get(Cliente cliente)
         {
-            var cliente = new Service.ClienteService().Get(_id);
+            cliente = new Service.ClienteService().Get(cliente);
 
             if (cliente != null)
             {
-                cliente.of_list =
-                              Global.Eventos.SingleOrDefault(
-                                  p => p.IdEvento == cliente.of_list.IdEvento);
+                //cliente.of_list = Global.Eventos.SingleOrDefault(p => p.id == cliente.of_list.id);
+                //cliente.of_list = Global.Eventos.SingleOrDefault(p => p.id == cliente.of_list.id);
             }
 
             // Atualiza os dados Globais com o cliente.

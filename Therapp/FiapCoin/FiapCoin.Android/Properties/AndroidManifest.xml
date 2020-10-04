@@ -3,5 +3,8 @@
 	<uses-sdk android:minSdkVersion="17" android:targetSdkVersion="28" />
 	<uses-permission android:name="android.permission.FLASHLIGHT" />
 	<uses-permission android:name="android.permission.CAMERA" />
+	<uses-permission android:name="android.permission.CALL_PHONE" />
+	<uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+	<uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
 	<application android:label="THERAPP" android:icon="@drawable/logo"></application>
 </manifest>

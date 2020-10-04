@@ -10,30 +10,41 @@ namespace THERAPP.Layers.Service
     {
         string message = string.Empty;
 
-        public Model.Cliente Get(int _id)
+        public Model.Cliente Get(Cliente cliente)
         {
-            var uri = String.Format("http://mock/api/Cliente/{0}", _id);
+            var uri = String.Format("https://freetos.ml/api/getClient");
+
+            var conteudoJson = Newtonsoft.Json.JsonConvert.SerializeObject(cliente);
+            var conteudoJsonString = new StringContent(conteudoJson, Encoding.UTF8, "application/json");
 
             System.Net.Http.HttpClient client = new HttpClient();
-            var resposta = client.GetAsync(uri).Result;
+            HttpResponseMessage resposta = client.PostAsync(uri, conteudoJsonString).Result;
 
-            if (resposta.IsSuccessStatusCode)
-            {
+             if (resposta.IsSuccessStatusCode)
+             {
                 var resultado = resposta.Content.ReadAsStringAsync().Result;
-                var cliente = JsonConvert.DeserializeObject<Cliente>(resultado);
-                cliente.IdEvento = cliente.of_list.IdEvento;
+                try { 
+                    cliente = JsonConvert.DeserializeObject<Cliente>(resultado);
+                    //cliente.IdEvento = cliente.of_list.id;
+                }
+                catch (Exception ex)
+                {
+                    message = ex.Message;
+                    App.MensagemAlerta("Erro", "cadastro incompleto "+ ex);
+                    return null;
+                }
                 return cliente;
-            }
-            else
-            {
-                throw new Exception("Dados do cliente não encontrado!");
-            }
+             }
+             else
+             {
+                throw new Exception("Dados não encontrados");
+             }
         }
 
         public void Save(Cliente _cliente)
         {
 
-            var uri = String.Format("http://mocky/api/Cliente/{0}", _cliente.id);
+            var uri = String.Format("https://freetos.ml/api/getClient/{0}", _cliente.id);
 
             var conteudoJson = Newtonsoft.Json.JsonConvert.SerializeObject(_cliente);
             var conteudoJsonString = new StringContent(conteudoJson, Encoding.UTF8, "application/json");
@@ -46,10 +57,8 @@ namespace THERAPP.Layers.Service
                 throw new Exception("Dados do cliente não encontrado!");
             }
 
-
-
-
         }
+
 
         public Model.Cliente Cadastrar(Cliente cliente)
         {
@@ -59,7 +68,7 @@ namespace THERAPP.Layers.Service
 
             var conteudoJson = Newtonsoft.Json.JsonConvert.SerializeObject(cliente);
             var conteudoJsonString = new StringContent(conteudoJson, Encoding.UTF8, "application/json");
-
+            
             try
             {
                 System.Net.Http.HttpClient client = new HttpClient();

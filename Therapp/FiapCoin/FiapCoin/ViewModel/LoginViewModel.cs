@@ -5,11 +5,19 @@ using THERAPP.Model;
 using THERAPP.Views;
 using THERAPP.Views.Components;
 using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace THERAPP.ViewModel
 {
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public Usuario Usuario { get; set; }
         public ICommand EntrarClickedCommand { get; private set; }
         public ICommand CadastrarClickedCommand { get; private set; }
@@ -43,14 +51,13 @@ namespace THERAPP.ViewModel
                     var cliente =
                         new Layers.Business.UsuarioBusiness().Login(Usuario.email, Usuario.password);
 
-                    //descomentar
                     App.LoadGlobalVariables();
 
                     MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
                 }
                 catch (Exception ex)
                 {
-                    App.MensagemAlerta("Erro", "Usuário ou senha inválidos" + ex.Message);
+                    App.MensagemAlerta("Erro", "Usuário ou senha inválidos");
                 }
             });
 

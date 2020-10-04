@@ -9,15 +9,15 @@ namespace THERAPP.Model
     public class Cliente : INotifyPropertyChanged
     {
         //colocar o calendar_id ou eventos(id)
-        [ForeignKey(typeof(Evento))]
+        /*[ForeignKey(typeof(Evento))]
         public int IdEvento
         {
             get; set;
-        }
+        }*/
 
-        private Evento _of_list;
-        [OneToOne(foreignKey: "IdEvento")]
-        public Evento of_list
+        private int _of_list;
+        //[OneToOne(foreignKey: "IdEvento")]
+        public int of_list
         {
             get { return _of_list; }
             set
@@ -188,7 +188,7 @@ namespace THERAPP.Model
             this.id = _id;
         }
 
-        public Cliente(int _id, String _email, String _nome, String _fone, int _age, String _cep, String _sexo, double _peso, Evento _evento)
+        public Cliente(int _id, String _email, String _nome, String _fone, int _age, String _cep, String _sexo, double _peso, int _evento)
         {
             this.id = _id;
             this.name = _nome;
@@ -211,6 +211,14 @@ namespace THERAPP.Model
             this.cep = _cep;
             this.gender = _sexo;
             this.peso = _peso;
+            this.password = _senha;
+        }
+
+        public Cliente(int _id, String _email, string _username, String _senha)
+        {
+            this.id = _id;
+            this.email = _email;
+            this.username = _username;
             this.password = _senha;
         }
 

@@ -14,73 +14,73 @@ namespace THERAPP.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private int idEvento;
+        private int _id;
 
         [PrimaryKey]
-        public int IdEvento
+        public int id
         {
-            get { return idEvento; }
+            get { return _id; }
             set
             {
-                if (idEvento != value)
+                if (_id != value)
                 {
-                    idEvento = value;
+                    _id = value;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        private int idCalendar;
-        public int IdCalendar
+        private int _calendar_id;
+        public int calendar_id
         {
-            get { return idCalendar; }
+            get { return _calendar_id; }
             set
             {
-                if (idCalendar != value)
+                if (_calendar_id != value)
                 {
-                    idCalendar = value;
+                    _calendar_id = value;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        private String title;
-        public String Title
+        private String _title;
+        public String title
         {
-            get { return title; }
+            get { return _title; }
             set
             {
-                if (title != value)
+                if (_title != value)
                 {
-                    title = value;
+                    _title = value;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        private String description;
-        public String Description
+        private String _description;
+        public String description
         {
-            get { return description; }
+            get { return _description; }
             set
             {
-                if (description != value)
+                if (_description != value)
                 {
-                    description = value;
+                    _description = value;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        private DateTime start;
-        public DateTime Start
+        private DateTime _start;
+        public DateTime start
         {
-            get { return start; }
+            get { return _start; }
             set
             {
-                if (start != value)
+                if (_start != value)
                 {
-                    start = value;
+                    _start = value;
                     NotifyPropertyChanged();
                 }
             }
@@ -91,21 +91,21 @@ namespace THERAPP.Model
 
         }
 
-        public Evento(int _idEvento, int _idCalendar, String _title, String _description, DateTime _start)
+        public Evento(int _id, int _calendar_id, String _title, String _description, DateTime _start)
         {
-            this.IdEvento = _idEvento;
-            this.IdCalendar = _idCalendar;
-            this.Title = _title;
-            this.Description = _description;
-            this.Start = _start;
+            this.id = _id;
+            this.calendar_id = _calendar_id;
+            this.title = _title;
+            this.description = _description;
+            this.start = _start;
         }
 
-        public Evento(int _idEvento, int _idCalendar, String _title, DateTime _start)
+        public Evento(int _id, int _calendar_id, String _title, DateTime _start)
         {
-            this.IdEvento = _idEvento;
-            this.IdCalendar = _idCalendar;
-            this.Title = _title;
-            this.Start = _start;
+            this.id = _id;
+            this.calendar_id = _calendar_id;
+            this.title = _title;
+            this.start = _start;
         }
     }
 }

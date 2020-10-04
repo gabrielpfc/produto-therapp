@@ -22,7 +22,7 @@ namespace THERAPP.Layers.Data
         public Model.Evento Get(int _id)
         {
             return _dbConn.Connection.Table<Model.Evento>()
-                          .Where(p => p.IdEvento == _id).SingleOrDefault();
+                          .Where(p => p.id == _id).SingleOrDefault();
         }
 
         public void Insert(Model.Evento _evento)

@@ -16,9 +16,7 @@
                 <Button Text="Atendimento Emergencial" BackgroundColor="Red" Clicked="CallClicked" TextColor="White" HeightRequest="80"></Button>
                 <Label Text=""></Label>
                 <Label Text="  Minhas Consultas" FontSize="Large"></Label>
-
                 <Label Text="  Nenhuma consulta agendada"></Label>
-                
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#c5cefb">
                 <DatePicker MinimumDate="10/01/2020"

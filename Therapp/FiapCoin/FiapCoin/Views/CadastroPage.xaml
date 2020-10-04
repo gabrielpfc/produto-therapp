@@ -29,15 +29,19 @@
                     <StackLayout>
                         <Label Text="Dados pessoais" TextColor="#576ff4"></Label>
                         <Entry Placeholder="Digite o nome" Text="{Binding Cliente.name}" ></Entry>
-                        <StackLayout Spacing="10" Orientation="Horizontal">
-                            <Label Text="Sexo:" AnchorY="-100"></Label>
-                            <Picker WidthRequest="200" ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
-                        </StackLayout>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <Label Text="Peso"/>
-                            <Entry Placeholder="Digite o Peso" WidthRequest="50" Text="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
-                            <Label Text="Idade"/>
-                            <Entry Placeholder="Digite a Idade" WidthRequest="50" Text="{Binding Cliente.age}" Keyboard="Numeric" ></Entry>
+                            <Picker Title="Sexo" SelectedItem="{Binding Cliente.gender}" WidthRequest="100">
+                                <Picker.Items>
+                                    <x:String>Masculino</x:String>
+                                    <x:String>Feminino</x:String>
+                                    <x:String>Não binário</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <!-- <Picker WidthRequest="200" ItemsSource="{Binding genders}" ItemDisplayBinding="{Binding genders}" SelectedItem="{Binding Cliente.gender}" /> -->
+                            <Label Text=" Peso"/>
+                            <Entry Placeholder="" WidthRequest="50" Text="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
+                            <Label Text=" Idade"/>
+                            <Entry Placeholder="" WidthRequest="50" Text="{Binding Cliente.age}" Keyboard="Numeric" ></Entry>
                         </StackLayout>
                         <Entry Placeholder="Digite o Telefone" Text="{Binding Cliente.number}" Keyboard="Numeric"></Entry>
                         <Entry Placeholder="Digite o CEP" Text="{Binding Cliente.cep}"  Keyboard="Numeric"></Entry>

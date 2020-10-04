@@ -5,33 +5,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="THERAPP.Views.MeusDadosPage"
-             Title="Meus Dados">
+             Title="Meus Dados"
+             xmlns:vm="clr-namespace:THERAPP.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <vm:MeusDadosViewModel></vm:MeusDadosViewModel>
+    </ContentPage.BindingContext>
+    
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30" BackgroundColor="#c5cefb">
 
                 <Label Text="Nome:"></Label>
-                <Entry Placeholder="Digite o nome" Text="" ></Entry>
+                <Entry Placeholder="{Binding Cliente.name}" Text="" ></Entry>
 
                 <Label Text="Sexo:"></Label>
-                <Picker ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
+                <Picker ItemsSource="{Binding Genders}" ItemDisplayBinding="{Binding Cliente.gender}" SelectedItem="{Binding Cliente.gender}" />
 
                 <Label Text="Email:"></Label>
-                <Entry Placeholder="Digite o e-mail" ></Entry>
+                <Entry Placeholder="{Binding Cliente.email}" ></Entry>
 
                 <Label Text="Telefone:"></Label>
-                <Entry Placeholder="Digite o Telefone" Keyboard="Numeric"></Entry>
+                <Entry Placeholder="{Binding Cliente.number}" Keyboard="Numeric"></Entry>
 
                 <Label Text="CEP:"></Label>
-                <Entry Placeholder="Digite o CEP" Keyboard="Numeric"></Entry>
+                <Entry Placeholder="{Binding Cliente.cep}" Keyboard="Numeric"></Entry>
 
                 <Label Text="Peso:"></Label>
-                <Entry Placeholder="Digite o Peso"  Keyboard="Numeric" ></Entry>
+                <Entry Placeholder="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
 
                 <Label Text="Idade:"></Label>
-                <Entry Placeholder="Digite a Idade" Keyboard="Numeric" ></Entry>
+                <Entry Placeholder="{Binding Cliente.age}" Keyboard="Numeric" ></Entry>
 
-                <Button Text="Gravar" BackgroundColor="#2296f3"></Button>
+                <Button Text="Gravar" Command="{Binding GravarTappedCommand}" BackgroundColor="#2296f3"></Button>
             
             </StackLayout>
         </ScrollView>

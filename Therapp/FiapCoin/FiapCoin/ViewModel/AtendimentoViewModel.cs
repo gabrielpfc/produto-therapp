@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using THERAPP.Views;
 using THERAPP.Views.Components;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
 namespace THERAPP.ViewModel

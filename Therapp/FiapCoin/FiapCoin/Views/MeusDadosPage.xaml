@@ -17,13 +17,19 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30" BackgroundColor="#c5cefb">
-
                 <Label Text="Nome:"></Label>
                 <Entry Placeholder="{Binding Cliente.name}" Text="" ></Entry>
 
                 <Label Text="Sexo:"></Label>
-                <Picker ItemsSource="{Binding Genders}" ItemDisplayBinding="{Binding Cliente.gender}" SelectedItem="{Binding Cliente.gender}" />
-
+                <Picker ItemDisplayBinding="{Binding Cliente.gender}" 
+                        Title="Sexo" SelectedItem="{Binding Cliente.gender}" 
+                        WidthRequest="100">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                        <x:String>Não binário</x:String>
+                    </Picker.Items>
+                </Picker>
                 <Label Text="Email:"></Label>
                 <Entry Placeholder="{Binding Cliente.email}" ></Entry>
 
@@ -37,7 +43,7 @@
                 <Entry Placeholder="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
 
                 <Label Text="Idade:"></Label>
-                <Entry Placeholder="{Binding Cliente.age}" Keyboard="Numeric" ></Entry>
+                <Entry Placeholder="{Binding Cliente.idade}" Keyboard="Numeric" ></Entry>
 
                 <Button Text="Gravar" Command="{Binding GravarTappedCommand}" BackgroundColor="#2296f3"></Button>
             

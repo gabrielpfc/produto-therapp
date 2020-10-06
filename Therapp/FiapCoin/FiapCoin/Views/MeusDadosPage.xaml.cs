@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using THERAPP.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +21,12 @@ namespace THERAPP.Views
             base.OnAppearing(); //must happen FIRST
             Device.BeginInvokeOnMainThread(() => { DisplayAlert("Para te atender melhor.", "\nPedimos que você mantenha seus dados atualizados.", "OK"); });
 
+            if (Global.Cliente.gender == "nb")
+            {
+                //
+                int i = 0;
+                String coment = "rs";
+            }
             //forums say the below line (with async method) should work the same as BeginInvokeOnMainThread(), but in actual testing, it fails.
             //await DisplayAlert("Title", "My Message", "OK"); 
         }

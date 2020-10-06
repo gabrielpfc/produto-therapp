@@ -30,7 +30,9 @@
                         <Label Text="Dados pessoais" TextColor="#576ff4"></Label>
                         <Entry Placeholder="Digite o nome" Text="{Binding Cliente.name}" ></Entry>
                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <Picker Title="Sexo" SelectedItem="{Binding Cliente.gender}" WidthRequest="100">
+                            <Picker Title="Sexo" 
+                                    SelectedItem="{Binding Cliente.gender}"
+                                    WidthRequest="100">
                                 <Picker.Items>
                                     <x:String>Masculino</x:String>
                                     <x:String>Feminino</x:String>

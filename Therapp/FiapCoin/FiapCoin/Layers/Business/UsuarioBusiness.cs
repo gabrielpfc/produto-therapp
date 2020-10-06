@@ -17,9 +17,10 @@ namespace THERAPP.Layers.Business
             {
                 //User->Cliente
                 _cliente = new ClienteService().Get(new Cliente(_usuario.id, _usuario.email, _usuario.username, _usuario.password));
-                
-                if(_cliente == null) { 
-                // Grava os dados do cliente no dispositivo
+
+                if (_cliente == null) {
+                    // Grava os dados do cliente no dispositivo
+                    _cliente.age = _cliente.idade;
                     new ClienteBusiness().SaveClienteLogged(new Cliente(_usuario.id, _usuario.email, _usuario.username, _usuario.password));
                 }
                 else

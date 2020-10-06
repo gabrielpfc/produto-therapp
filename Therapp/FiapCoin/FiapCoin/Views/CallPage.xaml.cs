@@ -17,6 +17,5 @@ namespace THERAPP.Views
             InitializeComponent();
         }
 
-
     }
 }

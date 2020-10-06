@@ -38,6 +38,7 @@ namespace THERAPP.ViewModel
             Cliente.age = 0;
             Cliente.peso = 0;
             Cliente.gender = "";
+            Cliente.idade = 0;
 
             CadastrarClickedCommand = new Command(() =>
             {
@@ -46,9 +47,12 @@ namespace THERAPP.ViewModel
                     Cliente.gender = "nb";
                 }
 
+                //Adaptações
+                Cliente.email = Cliente.email.ToLower();
                 Cliente.username = Cliente.email;
+                Cliente.idade = Cliente.age;
 
-                Cliente cliente = new Layers.Business.ClienteBusiness().Cadastrar(new Cliente(Cliente.email, Cliente.username, Cliente.name, Cliente.password, Cliente.number, Cliente.age, Cliente.cep, Cliente.gender, Cliente.peso));
+                Cliente cliente = new Layers.Business.ClienteBusiness().Cadastrar(new Cliente(Cliente.email, Cliente.username, Cliente.name, Cliente.password, Cliente.number, Cliente.age, Cliente.idade, Cliente.cep, Cliente.gender, Cliente.peso));
 
                 if (cliente!=null)
                 {

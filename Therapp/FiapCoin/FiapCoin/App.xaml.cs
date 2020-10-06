@@ -17,6 +17,8 @@ namespace THERAPP
 
             var a = new Layers.Data.ClienteData();
 
+            //MainPage = new CadastroPage();
+
             if (Model.Global.Cliente != null)
             {
                 MainPage = new THERAPP.Views.PrincipalPage();
@@ -26,7 +28,6 @@ namespace THERAPP
                 MainPage = new THERAPP.Views.LoginPage();
             }
 
-            //MainPage = new NavigationPage( new THERAPP.Views.LoginPage());
         }
 
         protected override void OnStart()

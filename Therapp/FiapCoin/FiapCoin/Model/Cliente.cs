@@ -161,6 +161,20 @@ namespace THERAPP.Model
             }
         }
 
+        private int _idade;
+        public int idade
+        {
+            get { return _idade; }
+            set
+            {
+                if (_idade != value)
+                {
+                    _idade = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         private int _age;
         public int age
         {
@@ -176,9 +190,6 @@ namespace THERAPP.Model
         }
 
 
-
-
-
         public Cliente()
         {
         }
@@ -188,12 +199,13 @@ namespace THERAPP.Model
             this.id = _id;
         }
 
-        public Cliente(int _id, String _email, String _nome, String _fone, int _age, String _cep, String _sexo, double _peso, int _evento)
+        public Cliente(int _id, String _email, String _nome, String _fone, int _idade, int _age, String _cep, String _sexo, double _peso, int _evento)
         {
             this.id = _id;
             this.name = _nome;
             this.email = _email;
             this.number = _fone;
+            this.idade = _idade;
             this.age = _age;
             this.cep = _cep;
             this.gender = _sexo;
@@ -201,12 +213,27 @@ namespace THERAPP.Model
             this.of_list = _evento;
         }
 
-        public Cliente(String _email, string _username, String _nome, String _senha, String _fone, int _age, String _cep, String _sexo, double _peso)
+        public Cliente(String _email, string _username, String _nome, String _senha, String _fone, int _idade, String _cep, String _sexo, double _peso)
         {
             this.name = _nome;
             this.email = _email;
             this.number = _fone;
             this.username = _username;
+            this.age = _age;
+            this.cep = _cep;
+            this.gender = _sexo;
+            this.peso = _peso;
+            this.password = _senha;
+        }
+
+
+        public Cliente(String _email, string _username, String _nome, String _senha, String _fone, int _idade, int _age, String _cep, String _sexo, double _peso)
+        {
+            this.name = _nome;
+            this.email = _email;
+            this.number = _fone;
+            this.username = _username;
+            this.idade = _idade;
             this.age = _age;
             this.cep = _cep;
             this.gender = _sexo;

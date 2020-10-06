@@ -26,24 +26,8 @@ namespace THERAPP.ViewModel
         {
             Usuario = new Usuario();
 
-            // -- erro -- TypeError("'NoneType' object is not subscriptable",) -- 28/09
-            // Corrigido -- 30/09
-            Usuario.email = "fdasilva@mail";
-            Usuario.password = "12345";
-
-            //Usuario.Email = "testegab@gmail.com";
-            //Usuario.Senha = "testegabr";
-
-            // -- erro -- AssertionError('Error login incorreto!',)
-            //Usuario.Email = "testegab@gmail.com";
-            //Usuario.Senha = "testegab";
-
-            //Usuario.Email = "admin";
-            //Usuario.Senha = "1234";
-
-            //Usuario.Email = "admin@fiap.com.br";
-            //Usuario.Senha = "123456";
-
+            Usuario.email = "dsadsadsads";
+            Usuario.password = "adsadsadas";
 
             EntrarClickedCommand = new Command(() => {
                 try
@@ -51,9 +35,12 @@ namespace THERAPP.ViewModel
                     var cliente =
                         new Layers.Business.UsuarioBusiness().Login(Usuario.email, Usuario.password);
 
-                    App.LoadGlobalVariables();
-
-                    MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
+                    //App.LoadGlobalVariables();
+                    if (cliente.id != 0)
+                    {
+                        Global.Cliente = cliente;
+                        MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
+                    }
                 }
                 catch (Exception ex)
                 {

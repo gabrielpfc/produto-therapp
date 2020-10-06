@@ -8,8 +8,8 @@
              x:Class="THERAPP.Views.CallPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="Blue" Margin="-3" Padding="-200" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <WebView x:Name="webView" TranslationX="-92" TranslationY="127" Scale="0.85" Margin="-5" WidthRequest="3920" Source="https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <StackLayout BackgroundColor="Blue" Margin="-3" Padding="-100" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <WebView x:Name="webView" TranslationX="-12" TranslationY="27" Scale="0.71" Margin="-5" WidthRequest="3920" Source="https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
                 <Button TranslationX="-92" TranslationY="127" Text="Encerrar Consulta" TextColor="White" Opacity="0" BackgroundColor="Red"></Button>
             </StackLayout>  
         </ScrollView>

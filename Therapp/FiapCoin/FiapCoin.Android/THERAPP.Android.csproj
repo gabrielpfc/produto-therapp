@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="Layers\Data\Config\DBConfig.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyWebViewRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Views\Components\MessageAndroid.cs" />

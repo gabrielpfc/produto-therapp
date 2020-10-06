@@ -32,6 +32,11 @@ namespace THERAPP.ViewModel
             _cliente = Global.Cliente;
 
             GravarTappedCommand = new Command(() => {
+                if (Cliente.gender != "Masculino" && Cliente.gender != "Feminino")
+                {
+                    Cliente.gender = "nb";
+                }
+
                 var mensagem = "implementar- Dados do cliente alterados com sucesso!";
                 try
                 {

@@ -55,6 +55,13 @@ namespace THERAPP.Views
                     this.IsPresented = false;
                 });
 
+            MessagingCenter.Subscribe<AssinaturaPage>(this, "AssinaturaPageAbrir",
+                (sender) =>
+                {
+                    this.Detail = new NavigationPage(new AssinaturaPage());
+                    this.IsPresented = false;
+                });
+
             MessagingCenter.Subscribe<CallPage>(this, "CallPageAbrir",
                 (sender) =>
                 {
@@ -76,6 +83,7 @@ namespace THERAPP.Views
             MessagingCenter.Unsubscribe<ContatoPage>(this, "MeusDadosPageAbrir");
             MessagingCenter.Unsubscribe<QuemSomosPage>(this, "QuemSomosPageAbrir");
             MessagingCenter.Unsubscribe<CallPage>(this, "CallPageAbrir");
+            MessagingCenter.Unsubscribe<AssinaturaPage>(this, "AssinaturaPageAbrir");
         }
     }
 }

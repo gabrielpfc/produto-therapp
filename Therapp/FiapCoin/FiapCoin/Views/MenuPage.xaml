@@ -6,11 +6,10 @@
     <ContentPage.Content>
         <StackLayout Padding="12"
                      BackgroundColor="#576ff4">
-
             <Button Text="Perfil" Clicked="MeusDadosClicked" BackgroundColor="#c5cefb"></Button>
             <Button Text="Agendamento" Clicked="ConsultasClicked" BackgroundColor="#c5cefb"></Button>
             <Button Text="Atendimento" Clicked="AtendimentoClicked" BackgroundColor="#c5cefb"></Button>
-            <Button Text="Minha Assinatura" BackgroundColor="#c5cefb"></Button>
+            <Button Text="Minha Assinatura" Clicked="AssinaturaClicked" BackgroundColor="#c5cefb"></Button>
             <Button Text="Suporte" Clicked="ContatoClicked" BackgroundColor="#c5cefb"></Button>
             <Button Text="Quem Somos" Clicked="QuemSomosClicked" BackgroundColor="#c5cefb"></Button>
             <Label Text="   "></Label>

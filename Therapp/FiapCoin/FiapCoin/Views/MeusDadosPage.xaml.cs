@@ -23,9 +23,7 @@ namespace THERAPP.Views
 
             if (Global.Cliente.gender == "nb")
             {
-                //
-                int i = 0;
-                String coment = "rs";
+                PickerSex.SelectedIndex = 3;
             }
             //forums say the below line (with async method) should work the same as BeginInvokeOnMainThread(), but in actual testing, it fails.
             //await DisplayAlert("Title", "My Message", "OK"); 

@@ -17,7 +17,7 @@ namespace THERAPP
 
             var a = new Layers.Data.ClienteData();
 
-            //MainPage = new CadastroPage();
+            //MainPage = new AssinaturaPage();
 
             if (Model.Global.Cliente != null)
             {

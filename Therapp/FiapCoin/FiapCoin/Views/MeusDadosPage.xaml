@@ -21,7 +21,8 @@
                 <Entry Placeholder="{Binding Cliente.name}" Text="" ></Entry>
 
                 <Label Text="Sexo:"></Label>
-                <Picker ItemDisplayBinding="{Binding Cliente.gender}" 
+                <Picker x:Name="PickerSex"
+                        ItemDisplayBinding="{Binding Cliente.gender}" 
                         Title="Sexo" SelectedItem="{Binding Cliente.gender}" 
                         WidthRequest="100">
                     <Picker.Items>

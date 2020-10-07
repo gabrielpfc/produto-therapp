@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:tapped="clr-namespace:THERAPP.Views.Components"
              mc:Ignorable="d"
-             Title="Atendimento"
+             Title="Consultas"
              xmlns:vm="clr-namespace:THERAPP.ViewModel"
              x:Class="THERAPP.Views.AtendimentoPage">
 
@@ -17,6 +17,12 @@
 
     <ContentPage.Content>
         <StackLayout Padding="30" BackgroundColor="#c5cefb">
+            <Label Text="Seu historico de consultas" 
+                   FontSize="Medium" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand">
+            </Label>
+            <Label></Label>
             <ListView ItemsSource="{Binding ListaChats}" 
                       SelectedItem="{Binding ChatSelecionado}" 
                       tapped:ItemTappedAttached.Command="{Binding ChatTappedCommand}"

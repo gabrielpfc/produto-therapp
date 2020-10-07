@@ -26,8 +26,8 @@ namespace THERAPP.ViewModel
         {
             Usuario = new Usuario();
 
-            Usuario.email = "dsadsadsads";
-            Usuario.password = "adsadsadas";
+            Usuario.email = "";
+            Usuario.password = "";
 
             EntrarClickedCommand = new Command(() => {
                 try
@@ -47,22 +47,6 @@ namespace THERAPP.ViewModel
                     App.MensagemAlerta("Erro", "Usuário ou senha inválidos");
                 }
             });
-
-            /*if (cliente.IdUsuario != 0)
-            {
-                Global.Cliente = cliente;
-                MessagingCenter.Send<LoginViewModel>(this, "LoginSucesso");
-            }
-            else
-            {
-                App.MensagemAlerta("Login ou senha inválida");
-            }
-        }
-        catch (Exception ex)
-        {
-            App.MensagemAlerta("Login ou senha inválida. Detalhe: " + ex.Message);
-        }
-    });*/
 
             CadastrarClickedCommand = new Command(() => {
                 MessagingCenter.Send<LoginViewModel>(this, "Cadastrar");

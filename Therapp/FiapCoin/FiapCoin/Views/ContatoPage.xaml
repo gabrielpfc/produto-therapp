@@ -3,22 +3,35 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="THERAPP.Views.ContatoPage"
-    Title="Contato">
-    
+    Title="Contato"    
+    xmlns:vm="clr-namespace:THERAPP.ViewModel">
+
+    <ContentPage.BindingContext>
+        <vm:ContatoViewModel></vm:ContatoViewModel>
+    </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout Padding="30" BackgroundColor="#c5cefb">
-            <Label Text="Assunto:"  FontSize="Large"></Label>
-            <Picker ItemsSource="" ItemDisplayBinding="" SelectedItem="" />
+            <Picker Title="Assunto" 
+                                    SelectedItem="{Binding Assunto}"
+                                    WidthRequest="100">
+                <Picker.Items>
+                    <x:String>Relatar Bug</x:String>
+                    <x:String>Sugestão</x:String>
+                    <x:String>Reclamação</x:String>
+                    <x:String>Assinatura</x:String>
+                    <x:String>Parceria</x:String>
+                    <x:String>Outros</x:String>
+                </Picker.Items>
+            </Picker>
             <Label Text="Mensagem:" FontSize="Large"></Label>
             <Editor x:Name="EditorMensagem"
                     HeightRequest="300"
                     FontSize="Large"
                     BackgroundColor="AliceBlue"></Editor>
-            <Button x:Name="BotaoEnviar"
-                    BackgroundColor="#2296f3"
-                    Text="Enviar"
-                    FontSize="Large"></Button>
+            <Button Text="Enviar" 
+                                BackgroundColor="#2296f3" 
+                                Command="{Binding CadastrarClickedCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

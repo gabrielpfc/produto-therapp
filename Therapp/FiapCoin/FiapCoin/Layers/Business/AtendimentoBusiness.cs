@@ -10,12 +10,12 @@ namespace THERAPP.Layers.Business
         public IList<Model.ChatModel> ListaAtendimentosUsuario()
         {
                 return new List<Model.ChatModel>(){
-                new Model.ChatModel(1,"Dr. Ricardo", "20/10/2020"),
-                new Model.ChatModel(1,"Dra Nilce",  "22/10/2020"),
-                new Model.ChatModel(1,"Dr Fernando",  "20/11/2020"),
-                new Model.ChatModel(1,"Dra Nilce ",  "24/11/2020"),
-                new Model.ChatModel(1,"Dr Fernando",  "30/11/2020"),
-                new Model.ChatModel(1,"Dra Nilce",  "10/12/2020")
+                new Model.ChatModel(1,"Dr. Ricardo", "20/05/2020"),
+                new Model.ChatModel(1,"Dra. Nilce",  "22/06/2020"),
+                new Model.ChatModel(1,"Dr. Fernando",  "20/07/2020"),
+                new Model.ChatModel(1,"Dra. Nilce ",  "14/08/2020"),
+                new Model.ChatModel(1,"Dr. Fernando",  "30/08/2020"),
+                new Model.ChatModel(1,"Dra. Nilce",  "01/10/2020")
             };
         }
     }

@@ -11,9 +11,12 @@ namespace THERAPP.ViewModel
 {
     public class CallPageViewModel
     {
+        public WebView WebView { get; set; }
         public CallPageViewModel()
         {
- 
+               // WebView = webView;
+                //WebView.PermissionRequested += WebViewPermissionRequested;
+                //WebView.NavigationCompleted += WebViewNavigationCompleted;
         }
 
     }

@@ -13,8 +13,9 @@ using Android.Widget;
 using THERAPP.Droid.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
+using Plugin.Permissions.Abstractions;
 
-[assembly: ExportRenderer(typeof(Android.Webkit.WebView), typeof(MyWebViewRenderer))]
+[assembly: ExportRenderer(typeof(Xamarin.Forms.WebView), typeof(MyWebViewRenderer))]
 namespace THERAPP.Droid.Droid
 {
     public class MyWebViewRenderer : WebViewRenderer
@@ -28,6 +29,7 @@ namespace THERAPP.Droid.Droid
         {
             base.OnElementChanged(e);
             Control.Settings.JavaScriptEnabled = true;
+            Control.Settings.UserAgentString = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
             Control.ClearCache(true);
             Control.SetWebChromeClient(new MyWebClient(mContext));
         }

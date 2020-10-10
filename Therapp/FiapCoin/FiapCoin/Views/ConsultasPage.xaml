@@ -27,8 +27,8 @@
                                 <StackLayout Orientation="Horizontal" HeightRequest="700" WidthRequest="500" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                     <Label FontSize="Medium" Text="{Binding title}" FontAttributes="Bold" WidthRequest="300"></Label>
                                     <StackLayout HeightRequest="700" WidthRequest="500" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
-                                        <Label FontSize="Small" Text="{Binding description}" FontAttributes="Bold"></Label>
-                                        <Label FontSize="Small" Text="{Binding start}" FontAttributes=" Italic"></Label>
+                                        <Label FontSize="Small" Text="{Binding description}" WidthRequest="100" FontAttributes="Bold"></Label>
+                                        <Label FontSize="Small" Text="{Binding date}" FontAttributes=" Italic"></Label>
                                     </StackLayout>
                                     <Label Text="Deletar Consulta" WidthRequest="500" FontAttributes="Bold" FontSize="Medium"></Label>
                                 </StackLayout>

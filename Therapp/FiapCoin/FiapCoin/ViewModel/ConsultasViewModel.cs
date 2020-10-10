@@ -19,11 +19,12 @@ namespace THERAPP.ViewModel
 
             var Timestamp = new DateTimeOffset(Agora).ToUnixTimeSeconds();
 
-            String teste = Agora.ToString();
-            teste = teste.Substring(0, 2);
 
             DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Timestamp).ToLocalTime();
             string formattedDate = dt.ToString("dd/MM/yyyy - hh:mm");
+
+            String teste = Agora.ToString();
+            teste = teste.Substring(0, 2);
             // ---------------------------
 
 

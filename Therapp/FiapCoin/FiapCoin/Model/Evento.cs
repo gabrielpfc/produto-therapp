@@ -85,6 +85,20 @@ namespace THERAPP.Model
             }
         }
 
+        private DateTime _date;
+        public DateTime date
+        {
+            get { return _date; }
+            set
+            {
+                if (_date != value)
+                {
+                    _date = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         public Evento()
         {
 
@@ -97,6 +111,16 @@ namespace THERAPP.Model
             this.title = _title;
             this.description = _description;
             this.start = _start;
+        }
+
+        public Evento(int _id, int _calendar_id, String _title, String _description, String _start, DateTime _date)
+        {
+            this.id = _id;
+            this.calendar_id = _calendar_id;
+            this.title = _title;
+            this.description = _description;
+            this.start = _start;
+            this.date = _date;
         }
 
         public Evento(int _id, int _calendar_id, String _title, String _start)

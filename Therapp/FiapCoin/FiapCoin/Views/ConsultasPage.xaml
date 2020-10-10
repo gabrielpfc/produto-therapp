@@ -39,8 +39,9 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#c5cefb">
                 <DatePicker MinimumDate="10/01/2020"
-                                MaximumDate="12/31/2021"/>
-                <TimePicker Time="{Binding Agora}"/>
+                                MaximumDate="12/31/2021"
+                            x:Name="datePicker"/>
+                <TimePicker x:Name="timePicker"/>
                 <Label Text="  "></Label>
                 <Button Text="Agendar" BackgroundColor="#2296f3"></Button>
                 <Label Text=""></Label>

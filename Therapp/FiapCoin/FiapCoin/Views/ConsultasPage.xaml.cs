@@ -15,7 +15,10 @@ namespace THERAPP.Views
         public ConsultasPage()
         {
             InitializeComponent();
+            timePicker.Time = DateTime.Now.TimeOfDay;
         }
+
+        public BindableProperty Teste { get; private set; }
 
         public void CallClicked(object o, EventArgs e)
         {

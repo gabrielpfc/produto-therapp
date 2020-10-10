@@ -12,7 +12,20 @@ namespace THERAPP.ViewModel
         {
             ListaConsultas = new Layers.Business.EventosBusiness().GetList();
 
-            DateTime Agora = DateTime.Now;
+            // -- só testando variaveis de tempo
+            DateTime Agora = DateTime.UtcNow;
+            Agora = Agora.AddHours(-3);
+            var timeSpan = DateTime.Now.TimeOfDay;
+
+            var Timestamp = new DateTimeOffset(Agora).ToUnixTimeSeconds();
+
+            String teste = Agora.ToString();
+            teste = teste.Substring(0, 2);
+
+            DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Timestamp).ToLocalTime();
+            string formattedDate = dt.ToString("dd/MM/yyyy - hh:mm");
+            // ---------------------------
+
 
             ConsultaTappedCommand = new Command(() =>
             {

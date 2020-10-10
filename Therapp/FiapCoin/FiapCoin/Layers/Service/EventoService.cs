@@ -10,7 +10,7 @@ namespace THERAPP.Layers.Service
     {
         public IList<Evento> Get()
         {
-            var uri = "http://mocky/api/Evento/";
+            var uri = String.Format("https://freetos.ml/api/getEvents/{0}", Global.Cliente.id);
 
             System.Net.Http.HttpClient client = new HttpClient();
             var resposta = client.GetAsync(uri).Result;

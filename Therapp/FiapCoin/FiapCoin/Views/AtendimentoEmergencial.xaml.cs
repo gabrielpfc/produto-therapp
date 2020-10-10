@@ -16,11 +16,11 @@ using THERAPP.Model;
 namespace THERAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CallPage : ContentPage
+    public partial class AtendimentoEmergencial : ContentPage
     {
         private int i = 0;
 
-        public CallPage()
+        public AtendimentoEmergencial()
         {
             InitializeComponent();
         }
@@ -63,6 +63,26 @@ namespace THERAPP.Views
             else
             {
                 App.MensagemAlerta("É necessário fornecer permissão do microfone.", "Por favor verifique as permissões do aplicativo nas configurações do seu dispositivo.");
+            }
+
+        }
+
+        private async void _buttonEnd_Clicked(object sender, EventArgs e)
+        {
+            var status = PermissionStatus.Unknown;
+
+            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+
+            if (status != PermissionStatus.Granted)
+            {
+
+                status = await Utils.CheckPermissions(Permission.Camera);
+            }
+
+            if (status == PermissionStatus.Granted)
+            {
+                webView.Source = "https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true/"; //"https://test.webrtc.org/";
+                App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
             }
 
         }

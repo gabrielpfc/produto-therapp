@@ -11,7 +11,9 @@ namespace THERAPP.Layers.Business
 
             IList<Evento> listaEventos;
 
-            Data.EventoData eventosData = new Data.EventoData();
+            listaEventos = new Service.EventoService().Get();
+
+            /*Data.EventoData eventosData = new Data.EventoData();
             listaEventos = eventosData.GetList();
 
             if (listaEventos == null || listaEventos.Count < 1)
@@ -23,6 +25,7 @@ namespace THERAPP.Layers.Business
                     eventosData.Insert(evento);
                 }
             }
+            */
 
             return listaEventos;
         }

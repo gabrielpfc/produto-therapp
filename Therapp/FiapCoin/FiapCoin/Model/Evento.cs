@@ -7,7 +7,6 @@ namespace THERAPP.Model
 {
     public class Evento : INotifyPropertyChanged
     {
-
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
@@ -72,8 +71,8 @@ namespace THERAPP.Model
             }
         }
 
-        private DateTime _start;
-        public DateTime start
+        private String _start;
+        public String start
         {
             get { return _start; }
             set
@@ -91,7 +90,7 @@ namespace THERAPP.Model
 
         }
 
-        public Evento(int _id, int _calendar_id, String _title, String _description, DateTime _start)
+        public Evento(int _id, int _calendar_id, String _title, String _description, String _start)
         {
             this.id = _id;
             this.calendar_id = _calendar_id;
@@ -100,7 +99,7 @@ namespace THERAPP.Model
             this.start = _start;
         }
 
-        public Evento(int _id, int _calendar_id, String _title, DateTime _start)
+        public Evento(int _id, int _calendar_id, String _title, String _start)
         {
             this.id = _id;
             this.calendar_id = _calendar_id;

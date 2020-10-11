@@ -57,15 +57,15 @@ namespace THERAPP.Model
             }
         }
 
-        private String _description;
-        public String description
+        private String _desc;
+        public String desc
         {
-            get { return _description; }
+            get { return _desc; }
             set
             {
-                if (_description != value)
+                if (_desc != value)
                 {
-                    _description = value;
+                    _desc = value;
                     NotifyPropertyChanged();
                 }
             }
@@ -99,28 +99,53 @@ namespace THERAPP.Model
             }
         }
 
+        private String _dateText;
+        public String dateText
+        {
+            get { return _dateText; }
+            set
+            {
+                if (_dateText != value)
+                {
+                    _dateText = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         public Evento()
         {
 
         }
 
-        public Evento(int _id, int _calendar_id, String _title, String _description, String _start)
+        public Evento(int _id, int _calendar_id, String _title, String _desc, String _start)
         {
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
-            this.description = _description;
+            this.desc = _desc;
             this.start = _start;
         }
 
-        public Evento(int _id, int _calendar_id, String _title, String _description, String _start, DateTime _date)
+        public Evento(int _id, int _calendar_id, String _title, String _desc, String _start, DateTime _date)
         {
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
-            this.description = _description;
+            this.desc = _desc;
             this.start = _start;
             this.date = _date;
+        }
+
+        public Evento(int _id, int _calendar_id, String _title, String _desc, String _start, DateTime _date, String _dateText)
+        {
+            this.id = _id;
+            this.calendar_id = _calendar_id;
+            this.title = _title;
+            this.desc = _desc;
+            this.start = _start;
+            this.date = _date;
+            this.dateText = _dateText;
         }
 
         public Evento(int _id, int _calendar_id, String _title, String _start)

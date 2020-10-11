@@ -4,6 +4,7 @@ using System.Windows.Input;
 using THERAPP.Views.Components;
 using Xamarin.Forms;
 
+
 namespace THERAPP.ViewModel
 {
     public class ConsultasViewModel
@@ -12,7 +13,7 @@ namespace THERAPP.ViewModel
         {
             ListaConsultas = new Layers.Business.EventosBusiness().GetList();
 
-            // -- só testando variaveis de tempo
+            /* -- só testando variaveis de tempo
             DateTime Agora = DateTime.UtcNow;
             Agora = Agora.AddHours(-3);
             var timeSpan = DateTime.Now.TimeOfDay;
@@ -25,7 +26,7 @@ namespace THERAPP.ViewModel
 
             String teste = Agora.ToString();
             teste = teste.Substring(0, 2);
-            // ---------------------------
+             ---------------------------   */
 
 
             ConsultaTappedCommand = new Command(() =>

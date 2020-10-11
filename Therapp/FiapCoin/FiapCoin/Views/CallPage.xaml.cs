@@ -50,7 +50,7 @@ namespace THERAPP.Views
             {
                 if (i < 1)
                 {
-                    webView.Source = "https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true/"; //"https://test.webrtc.org/";
+                    webView.Source = "https://freetos.ml/video/video-call"; //"https://test.webrtc.org/";
                     App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
                     _button.Text = "Consulta de " + Global.Cliente.name;
                     i = i + 1;
@@ -74,6 +74,7 @@ namespace THERAPP.Views
             RunTimePermission();
             //Device.BeginInvokeOnMainThread(() => { DisplayAlert(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...", "OK"); });
             //String ae= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
+
         }
 
         public async void RunTimePermission()

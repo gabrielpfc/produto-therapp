@@ -15,11 +15,12 @@
                         TextColor="White" 
                         Text="Iniciar consulta" 
                         Clicked="_button_Clicked" />
-                <WebView Margin="-70"
+                <WebView Margin="-165"
                          WidthRequest="700"
                          HeightRequest="600"
-                         TranslationX="-15" 
-                         Scale="0.81" 
+                         TranslationX="-80" 
+                         TranslationY="85" 
+                         Scale="0.76" 
                            x:Name="webView"/>
             </StackLayout>
             

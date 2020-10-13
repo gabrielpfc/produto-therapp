@@ -1,5 +1,4 @@
-﻿using THERAPP.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace THERAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
-        protected LoginViewModel loginViewModel;
-		public LoginPage ()
-		{
-			InitializeComponent ();
+    public partial class ConsultaDetalhePage : ContentPage
+    {
+        public ConsultaDetalhePage()
+        {
+
+            InitializeComponent();
         }
     }
 }

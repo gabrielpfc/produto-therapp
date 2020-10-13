@@ -151,7 +151,6 @@ namespace THERAPP.Model
         public Evento(int _id, int _calendar_id, String _title, String _start)
         {
             this.id = _id;
-            this.calendar_id = _calendar_id;
             this.title = _title;
             this.start = _start;
         }

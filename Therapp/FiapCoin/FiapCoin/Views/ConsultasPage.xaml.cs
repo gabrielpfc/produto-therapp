@@ -19,6 +19,22 @@ namespace THERAPP.Views
             timePicker.Time = DateTime.Now.TimeOfDay;
         }
 
+        protected override void OnAppearing()
+        {
+            MessagingCenter.Subscribe<Model.Evento>(this, "ConsultaDetalhePageAbrir",
+                        (sender) =>
+                        {
+                            Model.Global.Evento = sender;
+                            this.Navigation.PushAsync(new ConsultaDetalhePage());
+                        });
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<Model.Evento>(this, "ConsultaDetalhePageAbrir");
+        }
+
         public void Agendar_Clicked(object o, EventArgs e)
         {
             var date = datePicker.Date;
@@ -32,7 +48,7 @@ namespace THERAPP.Views
             //convertendo data para timestamp
             var timeStamp = new DateTimeOffset(oDate).ToUnixTimeSeconds();
 
-            if(new EventoService().newEvent(new Model.Evento(0,0,"TesteTitle","TesteDesc", timeStamp.ToString())))
+            if(new EventoService().newEvent(new Model.Evento(0,0,"Consulta","TesteDesc", timeStamp.ToString())))
             {
                 DisplayAlert("Tudo certo!", "Sua consulta foi agendada.", "OK");
                 InitializeComponent();

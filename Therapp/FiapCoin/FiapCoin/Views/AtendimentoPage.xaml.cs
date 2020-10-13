@@ -26,14 +26,6 @@ namespace THERAPP.Views
                             //this.Detail.Navigation.PushAsync(new ChatPage());
                             this.Navigation.PushAsync(new ChatPage());
                         });
-
-
-            /*MessagingCenter.Subscribe<Model.MoedaModel>(this, "PosicaoDetalheAbrir",
-                 (sender) =>
-                 {
-                     Model.Global.MoedaPosicaoDetalhe = sender;
-                     this.Detail.Navigation.PushAsync(new PosicaoDetalhePage());
-                 });*/
         }
 
         protected override void OnDisappearing()

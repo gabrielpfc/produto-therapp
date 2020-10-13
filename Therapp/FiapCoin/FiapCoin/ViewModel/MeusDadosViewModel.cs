@@ -37,7 +37,7 @@ namespace THERAPP.ViewModel
                     Cliente.gender = "nb";
                 }
 
-                var mensagem = "implementar- Dados do cliente alterados com sucesso!";
+                var mensagem = "Dados do cliente alterados com sucesso!";
                 try
                 {
                     //new ClienteService().Save(_cliente);

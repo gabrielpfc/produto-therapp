@@ -33,6 +33,8 @@ namespace THERAPP.ViewModel
             {
                 //DependencyService.Get<IMessage>().LongAlert(ConsultaSelecionada.DescConsulta);
                 //deletar consulta -> var ConsultaSelecionada
+
+                MessagingCenter.Send<Model.Evento>(ConsultaSelecionada, "ConsultaDetalhePageAbrir");
             });
         }
 

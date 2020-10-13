@@ -18,15 +18,13 @@ namespace THERAPP.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing(); //must happen FIRST
+            base.OnAppearing();
             Device.BeginInvokeOnMainThread(() => { DisplayAlert("Para te atender melhor.", "\nPedimos que você mantenha seus dados atualizados.", "OK"); });
 
             if (Global.Cliente.gender == "nb")
             {
                 PickerSex.SelectedIndex = 3;
             }
-            //forums say the below line (with async method) should work the same as BeginInvokeOnMainThread(), but in actual testing, it fails.
-            //await DisplayAlert("Title", "My Message", "OK"); 
         }
     }
 }

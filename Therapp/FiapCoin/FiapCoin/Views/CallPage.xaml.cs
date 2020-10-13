@@ -87,23 +87,9 @@ namespace THERAPP.Views
             {
 
                 status = await Utils.CheckPermissions(Permission.Camera);
+                await Utils.CheckPermissions(Permission.Camera);
                 await Utils.CheckPermissions(Permission.Microphone);
 
-            }
-
-            status = await Plugin.Permissions.CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Microphone);
-            if (status != PermissionStatus.Granted)
-            {
-                status = await Utils.CheckPermissions(Permission.Microphone);
-
-            }
-
-            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-
-            if (status != PermissionStatus.Granted)
-            {
-
-                status = await Utils.CheckPermissions(Permission.Camera);
             }
         }
 

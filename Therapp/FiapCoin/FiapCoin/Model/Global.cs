@@ -8,7 +8,9 @@ namespace THERAPP.Model
     {
         public static Cliente Cliente{ get; set; }
 
-        public static IList<Evento> Eventos{ get; set; }
+        public static IList<Evento> Eventos { get; set; }
+
+        public static Evento Evento { get; set; }
 
         public static ChatModel ChatDetalhe { get; set; }
     }

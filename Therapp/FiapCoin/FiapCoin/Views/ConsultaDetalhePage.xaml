@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:THERAPP.ViewModel"
+             Title="Detalhe da Consulta"
+             x:Class="THERAPP.Views.ConsultaDetalhePage">
+
+    <ContentPage.BindingContext>
+        <vm:ConsultaDetalheViewModel></vm:ConsultaDetalheViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout Padding="30" BackgroundColor="#c5cefb">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Label FontAttributes="Bold" FontSize="Large" Text="{Binding Evento.title}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text=""></Label>
+                <Label FontAttributes="Bold" FontSize="Medium" Text="Data da consulta:"></Label>
+                <Label FontAttributes="Bold" FontSize="Medium" Text="{Binding Evento.dateText}" />
+            </StackLayout>
+            <Button Text="Cancelar Consulta"></Button>
+            <Button Text="Alterar atendimento"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

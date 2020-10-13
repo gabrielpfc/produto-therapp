@@ -29,8 +29,7 @@ namespace THERAPP.Droid.Droid
         {
             base.OnElementChanged(e);
             Control.Settings.JavaScriptEnabled = true;
-            //Control.Settings.UserAgentString = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
-            //Control.ClearCache(true);
+            Control.Settings.MediaPlaybackRequiresUserGesture = true;
             Control.SetWebChromeClient(new MyWebClient(mContext));
         }
         public class MyWebClient : WebChromeClient

@@ -19,7 +19,7 @@
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Text=""></Label>
                 <Label FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium" Text="{Binding Evento.dateText}" />
-                <Button Text="Entrar na Consulta" Command="{Binding EntrarClickedCommand}" BackgroundColor="#2296f3"></Button>
+                <Button Text="Entrar na Consulta" Clicked="CallClicked" BackgroundColor="#2296f3"></Button>
             </StackLayout>
             <StackLayout>
                 <Label Text=""></Label>

@@ -14,8 +14,22 @@ namespace THERAPP.Views
     {
         public ConsultaDetalhePage()
         {
-
             InitializeComponent();
+        }
+        public void CallClicked(object o, EventArgs e)
+        {
+            if (Model.Global.Evento.date > DateTime.Now)
+            {
+                //
+                App.MensagemAlerta("Por favor aguarde a data da sua consulta.", "Em caso de urgência você pode utilizar uma consulta emergencial.");
+            }
+            else
+            {
+                MessagingCenter.
+                    Send<CallAgendadaPage>(
+                        new CallAgendadaPage(),
+                        "CallAgendadaPageAbrir");
+            }
         }
     }
 }

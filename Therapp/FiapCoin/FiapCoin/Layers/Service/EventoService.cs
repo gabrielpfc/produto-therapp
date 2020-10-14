@@ -51,8 +51,13 @@ namespace THERAPP.Layers.Service
 
             if (resposta.IsSuccessStatusCode)
             {
-                try { 
+                try {
                     var resultado = resposta.Content.ReadAsStringAsync().Result;
+                    if (resultado != "")
+                    {
+                        App.MensagemAlerta("Erro ao marcar sua consulta.", resultado);
+                        return false;
+                    }
                 }
                 catch (Exception ex)
                 {

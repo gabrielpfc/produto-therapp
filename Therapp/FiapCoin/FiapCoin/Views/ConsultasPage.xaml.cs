@@ -45,13 +45,19 @@ namespace THERAPP.Views
             DateTime oDate = DateTime.ParseExact(collectData, "MM/dd/yyyy HH:mm",
                                            CultureInfo.InvariantCulture);
 
-            //convertendo data para timestamp
-            var timeStamp = new DateTimeOffset(oDate).ToUnixTimeSeconds();
-
-            if(new EventoService().newEvent(new Model.Evento(0,0,"Consulta","Atendimento", timeStamp.ToString())))
+            if (oDate <= DateTime.Now)
             {
-                DisplayAlert("Tudo certo!", "Sua consulta foi agendada.", "OK");
-                InitializeComponent();
+                App.MensagemAlerta("Desculpe.", "Não possuimos atendimento neste horário, tente uma outra data!");
+            }
+            else { 
+                //convertendo data para timestamp
+                var timeStamp = new DateTimeOffset(oDate).ToUnixTimeSeconds();
+
+                if(new EventoService().newEvent(new Model.Evento(0,0,"Consulta", "Atendimento", "Atendimento", timeStamp.ToString())))
+                {
+                    DisplayAlert("Tudo certo!", "Sua consulta foi agendada.", "OK");
+                    InitializeComponent();
+                }   
             }
         }
 

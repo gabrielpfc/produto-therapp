@@ -16,11 +16,11 @@ using THERAPP.Model;
 namespace THERAPP.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CallPage : ContentPage
+    public partial class CallAgendadaPage : ContentPage
     {
         private int i = 0;
 
-        public CallPage()
+        public CallAgendadaPage()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace THERAPP.Views
             {
                 if (i < 1)
                 {
-                    webView.Source = "https://freetos.ml/video/video-call"; //"https://test.webrtc.org/";
+                    webView.Source = Model.Global.Evento.description.Substring(15); 
                     App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
                     _button.Text = "Consulta de " + Global.Cliente.name;
                     i = i + 1;
@@ -70,7 +70,7 @@ namespace THERAPP.Views
 
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            base.OnAppearing(); //must happen FIRST
             RunTimePermission();
             //Device.BeginInvokeOnMainThread(() => { DisplayAlert(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...", "OK"); });
             //String ae= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";

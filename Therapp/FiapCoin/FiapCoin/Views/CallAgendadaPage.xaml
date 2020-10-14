@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Atendimento"
-             x:Class="THERAPP.Views.CallPage">
+             x:Class="THERAPP.Views.CallAgendadaPage">
 
     <ContentPage.Content>
         <ScrollView>
@@ -21,9 +21,9 @@
                          TranslationX="-10" 
                          TranslationY="85" 
                          Scale="0.76" 
-                           x:Name="webView"/>
+                         x:Name="webView"/>
             </StackLayout>
-            
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

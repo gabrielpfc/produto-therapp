@@ -71,6 +71,20 @@ namespace THERAPP.Model
             }
         }
 
+        private String _desc;
+        public String desc
+        {
+            get { return _desc; }
+            set
+            {
+                if (_desc != value)
+                {
+                    _desc = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         private String _start;
         public String start
         {
@@ -127,14 +141,14 @@ namespace THERAPP.Model
             this.start = _start;
         }
 
-        public Evento(int _id, int _calendar_id, String _title, String _desc, String _start, DateTime _date)
+        public Evento(int _id, int _calendar_id, String _title, String _desc, String _desc2, String _start)
         {
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
             this.description = _desc;
+            this.desc = _desc2;
             this.start = _start;
-            this.date = _date;
         }
 
         public Evento(int _id, int _calendar_id, String _title, String _desc, String _start, DateTime _date, String _dateText)
@@ -146,6 +160,19 @@ namespace THERAPP.Model
             this.start = _start;
             this.date = _date;
             this.dateText = _dateText;
+        }
+
+
+        public Evento(int _id, int _calendar_id, String _title, String _desc, String _desc2, String _start, DateTime _date, String _dateText)
+        {
+            this.id = _id;
+            this.calendar_id = _calendar_id;
+            this.title = _title;
+            this.description = _desc;
+            this.start = _start;
+            this.date = _date;
+            this.dateText = _dateText;
+            this.desc = description;
         }
 
         public Evento(int _id, int _calendar_id, String _title, String _start)

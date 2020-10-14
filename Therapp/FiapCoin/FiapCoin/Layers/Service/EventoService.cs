@@ -27,7 +27,7 @@ namespace THERAPP.Layers.Service
                     System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                     evento.date = dtDateTime.AddSeconds(Convert.ToDouble(evento.start)).ToLocalTime();
 
-                    evento.dateText = evento.date.ToString("dd/MM/yyyy hh:mm");
+                    evento.dateText = evento.date.ToString("dd/MM/yyyy HH:mm");
                 }
 
                 return eventos;

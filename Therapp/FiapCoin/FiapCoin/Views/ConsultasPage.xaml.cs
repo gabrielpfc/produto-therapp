@@ -45,7 +45,10 @@ namespace THERAPP.Views
             DateTime oDate = DateTime.ParseExact(collectData, "MM/dd/yyyy HH:mm",
                                            CultureInfo.InvariantCulture);
 
-            if (oDate <= DateTime.Now)
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(1);
+
+            if (oDate < answer)
             {
                 App.MensagemAlerta("Desculpe.", "Não possuimos atendimento neste horário, tente uma outra data!");
             }

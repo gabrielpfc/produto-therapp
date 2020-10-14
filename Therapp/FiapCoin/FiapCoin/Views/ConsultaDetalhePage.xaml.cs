@@ -18,10 +18,20 @@ namespace THERAPP.Views
         }
         public void CallClicked(object o, EventArgs e)
         {
-            if (Model.Global.Evento.date > DateTime.Now)
+            DateTime today = DateTime.Now;
+            today = today.AddHours(-3);
+            DateTime answer = today.AddMinutes(21);
+
+            DateTime dataConsulta = Model.Global.Evento.date;
+            dataConsulta = dataConsulta.AddMinutes(+1);
+
+            if (dataConsulta > today)
             {
-                //
-                App.MensagemAlerta("Por favor aguarde a data da sua consulta.", "Em caso de urgência você pode utilizar uma consulta emergencial.");
+                App.MensagemAlerta("Por favor aguarde até a data da consulta.", "Em caso de urgência você pode utilizar uma consulta emergencial.");
+            }
+            else if (dataConsulta > answer)
+            {
+                App.MensagemAlerta("Esta consulta já expirou.", "Em caso de urgência você pode utilizar uma consulta emergencial.");
             }
             else
             {

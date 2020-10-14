@@ -77,9 +77,15 @@ namespace THERAPP.Layers.Service
                 if (resposta.IsSuccessStatusCode)
                 {
                     var resultado = resposta.Content.ReadAsStringAsync().Result;
-                    App.MensagemAlerta("Tudo certo!", "Registrado com sucesso!");
-
+                    if (resultado == "") { 
+                        App.MensagemAlerta("Tudo certo!", "Registrado com sucesso!");
                     return cliente;
+                    }
+                    else
+                    {
+                        App.MensagemAlerta("Não foi possivel cadastrar!", resultado);
+                        return null;
+                    }
                 }
                 else
                 {

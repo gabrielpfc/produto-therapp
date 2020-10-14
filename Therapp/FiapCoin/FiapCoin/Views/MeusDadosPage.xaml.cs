@@ -18,7 +18,7 @@ namespace THERAPP.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+            base.OnAppearing(); //must happen FIRST
             Device.BeginInvokeOnMainThread(() => { DisplayAlert("Para te atender melhor.", "\nPedimos que você mantenha seus dados atualizados.", "OK"); });
 
             if (Global.Cliente.gender == "nb")

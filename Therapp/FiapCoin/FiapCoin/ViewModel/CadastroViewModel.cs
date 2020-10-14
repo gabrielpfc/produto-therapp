@@ -25,6 +25,51 @@ namespace THERAPP.ViewModel
         public ICommand VoltarClickedCommand { get; private set; }
         public ICommand CadastrarClickedCommand { get; private set; }
 
+        public Boolean validaCampos(Cliente cliente)
+        {
+            if (cliente.email.Length < 4)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Insira um e-mail");
+                return false;
+            }
+            if (cliente.password.Length < 6)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Senha muito fraca!");
+                return false;
+            }
+            if (cliente.name.Length < 2)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Insira um nome!");
+                return false;
+            }
+            if (cliente.idade < 1 || cliente.idade > 140)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Idade inválida!");
+                return false;
+            }
+            if (cliente.peso < 1 || cliente.peso > 740)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Insira seu Peso!");
+                return false;
+            }
+            if (cliente.cep.Length < 7)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Cep inválido!");
+                return false;
+            }
+            if (cliente.cep == "01234567" || cliente.cep == "012345678" || cliente.cep == "0123456789" || cliente.cep == "0123456" || cliente.cep == "123456" || cliente.cep == "1234567" || cliente.cep == "12345678" || cliente.cep == "123456789")
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Cep inválido!");
+                return false;
+            }
+            if (cliente.number.Length < 8)
+            {
+                App.MensagemAlerta("Não foi possivel cadastrar.", "Telefone inválido!");
+                return false;
+            }
+
+            return true;
+        }
 
         public CadastroViewModel()
         {
@@ -46,18 +91,20 @@ namespace THERAPP.ViewModel
                 {
                     Cliente.gender = "nb";
                 }
-
                 //Adaptações
                 Cliente.email = Cliente.email.ToLower();
                 Cliente.username = Cliente.email;
                 Cliente.idade = Cliente.age;
-
-                Cliente cliente = new Layers.Business.ClienteBusiness().Cadastrar(new Cliente(Cliente.email, Cliente.username, Cliente.name, Cliente.password, Cliente.number, Cliente.age, Cliente.idade, Cliente.cep, Cliente.gender, Cliente.peso));
-
-                if (cliente!=null)
+                if (validaCampos(new Cliente(Cliente.email, Cliente.username, Cliente.name, Cliente.password, Cliente.number, Cliente.age, Cliente.idade, Cliente.cep, Cliente.gender, Cliente.peso)))
                 {
-                    MessagingCenter.Send<CadastroViewModel>(this, "Cadastrar");
-                    App.MensagemAlerta("Estamos prontos para te atender", "\n Com base em sua ficha técnica você já foi associado ao Doutor mais próximo e especializado em seu perfil.");
+
+                    Cliente cliente = new Layers.Business.ClienteBusiness().Cadastrar(new Cliente(Cliente.email, Cliente.username, Cliente.name, Cliente.password, Cliente.number, Cliente.age, Cliente.idade, Cliente.cep, Cliente.gender, Cliente.peso));
+
+                    if (cliente != null)
+                    {
+                        MessagingCenter.Send<CadastroViewModel>(this, "Cadastrar");
+                        App.MensagemAlerta("Estamos prontos para te atender", "\n Com base em sua ficha técnica você já foi associado ao Doutor mais próximo e especializado em seu perfil.");
+                    }
                 }
             });
 

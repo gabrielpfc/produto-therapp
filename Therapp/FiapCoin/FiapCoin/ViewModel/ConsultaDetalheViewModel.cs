@@ -15,7 +15,6 @@ namespace THERAPP.ViewModel
             CancelarClickedCommand = new Command(() =>
             {
                 App.MensagemAlerta("Ainda não é possivel cancelar consultas.", "Mas fique tranquilo você não pagara nenhuma taxa caso falte na consulta.");
-                //MessagingCenter.Send<CadastroViewModel>(this, "Voltar");
             });
 
             AlterarClickedCommand = new Command(() =>

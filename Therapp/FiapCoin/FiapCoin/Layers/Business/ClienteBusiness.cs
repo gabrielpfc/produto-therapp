@@ -12,11 +12,6 @@ namespace THERAPP.Layers.Business
         {
             var cliente = new Data.ClienteData().Get();
 
-            if (cliente != null)
-            {
-                //cliente.EventoCliente = Global.Eventos.SingleOrDefault(p => p.IdEvento == cliente.IdEvento);
-            }
-
             return cliente;
         }
 
@@ -24,12 +19,6 @@ namespace THERAPP.Layers.Business
         public Model.Cliente Get(Cliente cliente)
         {
             cliente = new Service.ClienteService().Get(cliente);
-
-            if (cliente != null)
-            {
-                //cliente.of_list = Global.Eventos.SingleOrDefault(p => p.id == cliente.of_list.id);
-                //cliente.of_list = Global.Eventos.SingleOrDefault(p => p.id == cliente.of_list.id);
-            }
 
             // Atualiza os dados Globais com o cliente.
             Global.Cliente = cliente;
@@ -54,11 +43,6 @@ namespace THERAPP.Layers.Business
             Cliente _cliente = new ClienteService().Cadastrar(cliente);
             return _cliente;
         }
-        /*        public Cliente Cadastrar(string email, string username, string name, string senha, string fone, int idade, string cep, string sexo, double peso)
-        {
-            Cliente _cliente = new ClienteService().Cadastrar(new Cliente(email.ToLower(), username.ToLower(), senha, name, fone, idade, cep, sexo, peso));
-            return _cliente;
-        }*/
 
     }
 }

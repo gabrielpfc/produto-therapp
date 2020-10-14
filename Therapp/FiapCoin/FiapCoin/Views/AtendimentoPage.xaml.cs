@@ -15,7 +15,6 @@ namespace THERAPP.Views
         public AtendimentoPage()
         {
             InitializeComponent();
-
         }
         protected override void OnAppearing()
         {

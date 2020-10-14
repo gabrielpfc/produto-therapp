@@ -83,6 +83,9 @@ namespace THERAPP.Layers.Service
                     }
                     else
                     {
+                        resultado = resultado.Remove(resultado.LastIndexOf(','));
+                        resultado = resultado.Substring(11);
+                        resultado = resultado.Trim(' ', ';', '\'');
                         App.MensagemAlerta("Não foi possivel cadastrar!", resultado);
                         return null;
                     }

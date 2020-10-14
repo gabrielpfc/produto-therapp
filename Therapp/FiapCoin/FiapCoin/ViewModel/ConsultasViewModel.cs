@@ -13,27 +13,8 @@ namespace THERAPP.ViewModel
         {
             ListaConsultas = new Layers.Business.EventosBusiness().GetList();
 
-            /* -- só testando variaveis de tempo
-            DateTime Agora = DateTime.UtcNow;
-            Agora = Agora.AddHours(-3);
-            var timeSpan = DateTime.Now.TimeOfDay;
-
-            var Timestamp = new DateTimeOffset(Agora).ToUnixTimeSeconds();
-
-
-            DateTime dt = new DateTime(1970, 1, 1, 0, 0, 0, 0).AddSeconds(Timestamp).ToLocalTime();
-            string formattedDate = dt.ToString("dd/MM/yyyy - hh:mm");
-
-            String teste = Agora.ToString();
-            teste = teste.Substring(0, 2);
-             ---------------------------   */
-
-
             ConsultaTappedCommand = new Command(() =>
             {
-                //DependencyService.Get<IMessage>().LongAlert(ConsultaSelecionada.DescConsulta);
-                //deletar consulta -> var ConsultaSelecionada
-
                 MessagingCenter.Send<Model.Evento>(ConsultaSelecionada, "ConsultaDetalhePageAbrir");
             });
         }

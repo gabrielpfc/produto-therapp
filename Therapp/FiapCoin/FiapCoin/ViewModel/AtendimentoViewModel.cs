@@ -16,9 +16,10 @@ namespace THERAPP.ViewModel
             ListaChats =
                 new Layers.Business.AtendimentoBusiness().ListaAtendimentosUsuario();
 
+            var ListaHistorico = Model.Global.Historico;
+
             ChatTappedCommand = new Command(() =>
             {
-                //DependencyService.Get<IMessage>().LongAlert(ChatSelecionado.NomeDr);
                 MessagingCenter.Send<Model.ChatModel>(ChatSelecionado, "ChatPageAbrir");
             });
         }
@@ -36,6 +37,18 @@ namespace THERAPP.ViewModel
             }
         }
 
+        private List<Model.Evento> listaHistorico;
+        public List<Model.Evento> ListaHistorico
+        {
+            get
+            {
+                return Model.Global.Historico;
+            }
+            set
+            {
+                listaHistorico = Model.Global.Historico;
+            }
+        }
 
         private Model.ChatModel chatSelecionado;
         public Model.ChatModel ChatSelecionado

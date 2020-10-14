@@ -57,15 +57,15 @@ namespace THERAPP.Model
             }
         }
 
-        private String _desc;
-        public String desc
+        private String _description;
+        public String description
         {
-            get { return _desc; }
+            get { return _description; }
             set
             {
-                if (_desc != value)
+                if (_description != value)
                 {
-                    _desc = value;
+                    _description = value;
                     NotifyPropertyChanged();
                 }
             }
@@ -123,7 +123,7 @@ namespace THERAPP.Model
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
-            this.desc = _desc;
+            this.description = _desc;
             this.start = _start;
         }
 
@@ -132,7 +132,7 @@ namespace THERAPP.Model
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
-            this.desc = _desc;
+            this.description = _desc;
             this.start = _start;
             this.date = _date;
         }
@@ -142,7 +142,7 @@ namespace THERAPP.Model
             this.id = _id;
             this.calendar_id = _calendar_id;
             this.title = _title;
-            this.desc = _desc;
+            this.description = _desc;
             this.start = _start;
             this.date = _date;
             this.dateText = _dateText;

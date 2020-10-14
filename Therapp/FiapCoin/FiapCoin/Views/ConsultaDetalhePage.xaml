@@ -14,15 +14,18 @@
 
         <StackLayout Padding="30" BackgroundColor="#c5cefb">
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                <Label FontAttributes="Bold" FontSize="Large" Text="{Binding Evento.title}" />
+                <Label FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand" Text="{Binding Evento.title}" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <Label Text=""></Label>
-                <Label FontAttributes="Bold" FontSize="Medium" Text="Data da consulta:"></Label>
-                <Label FontAttributes="Bold" FontSize="Medium" Text="{Binding Evento.dateText}" />
+                <Label FontAttributes="Bold" HorizontalOptions="CenterAndExpand" FontSize="Medium" Text="{Binding Evento.dateText}" />
+                <Button Text="Entrar na Consulta" Command="{Binding EntrarClickedCommand}" BackgroundColor="#2296f3"></Button>
             </StackLayout>
-            <Button Text="Cancelar Consulta"></Button>
-            <Button Text="Alterar atendimento"></Button>
+            <StackLayout>
+                <Label Text=""></Label>
+                <Button Text="Alterar atendimento" Command="{Binding AlterarClickedCommand}" BackgroundColor="#2296f3"></Button>
+                <Button Text="Cancelar Consulta" Command="{Binding CancelarClickedCommand}" BackgroundColor="#2296f3"></Button>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

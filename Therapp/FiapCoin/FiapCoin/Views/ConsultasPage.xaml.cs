@@ -48,7 +48,7 @@ namespace THERAPP.Views
             //convertendo data para timestamp
             var timeStamp = new DateTimeOffset(oDate).ToUnixTimeSeconds();
 
-            if(new EventoService().newEvent(new Model.Evento(0,0,"Consulta","TesteDesc", timeStamp.ToString())))
+            if(new EventoService().newEvent(new Model.Evento(0,0,"Consulta","Atendimento", timeStamp.ToString())))
             {
                 DisplayAlert("Tudo certo!", "Sua consulta foi agendada.", "OK");
                 InitializeComponent();

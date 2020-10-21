@@ -23,7 +23,7 @@ namespace THERAPP.Views
             DateTime answer = today.AddMinutes(21);
 
             DateTime dataConsulta = Model.Global.Evento.date;
-            dataConsulta = dataConsulta.AddMinutes(+1);
+            dataConsulta = dataConsulta.AddHours(-6);
 
             if (dataConsulta > today)
             {

@@ -37,7 +37,7 @@ namespace THERAPP.ViewModel
                     Cliente.gender = "nb";
                 }
 
-                var mensagem = "Dados do cliente alterados com sucesso!";
+                var mensagem = "Seus dados foram alterados com sucesso!";
                 try
                 {
                     //new ClienteService().Save(_cliente);
@@ -48,7 +48,7 @@ namespace THERAPP.ViewModel
                         ex.Message;
                 }
 
-                DependencyService.Get<IMessage>().ShortAlert(mensagem);
+                App.MensagemAlerta("Tudo certo!",mensagem);
             });
         }
 

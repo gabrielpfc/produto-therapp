@@ -15,7 +15,7 @@
 
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout VerticalOptions="CenterAndExpand" Padding="35">
+            <StackLayout VerticalOptions="CenterAndExpand" Padding="10">
 
                 <Label Text="Crie sua conta para começar a usar a THERAPP" FontSize="Large" XAlign="Center" TextColor="#576ff4"></Label>
                 <Entry Placeholder="Email" 
@@ -24,8 +24,8 @@
                 <Entry Placeholder="Senha" 
                        x:Name="EntrySenha"
                        Text="{Binding Cliente.password}" IsPassword="True"/>
-                
-                <StackLayout Padding="10">
+
+                <StackLayout Padding="5">
                     <StackLayout>
                         <Label Text="Dados pessoais" TextColor="#576ff4"></Label>
                         <Entry Placeholder="Digite o nome" Text="{Binding Cliente.name}" ></Entry>
@@ -39,7 +39,6 @@
                                     <x:String>Não binário</x:String>
                                 </Picker.Items>
                             </Picker>
-                            <!-- <Picker WidthRequest="200" ItemsSource="{Binding genders}" ItemDisplayBinding="{Binding genders}" SelectedItem="{Binding Cliente.gender}" /> -->
                             <Label Text=" Peso"/>
                             <Entry Placeholder="" WidthRequest="50" Text="{Binding Cliente.peso}"  Keyboard="Numeric" ></Entry>
                             <Label Text=" Idade"/>

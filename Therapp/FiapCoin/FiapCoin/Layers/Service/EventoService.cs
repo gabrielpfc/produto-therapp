@@ -4,6 +4,7 @@ using System.Net.Http;
 using THERAPP.Model;
 using Newtonsoft.Json;
 using System.Text;
+using System.Linq;
 
 namespace THERAPP.Layers.Service
 {
@@ -29,7 +30,7 @@ namespace THERAPP.Layers.Service
 
                     evento.dateText = evento.date.ToString("dd/MM/yyyy HH:mm");
                 }
-
+                eventos = eventos.OrderBy(o => o.date).ToList();
                 return eventos;
             }
             else

@@ -50,7 +50,7 @@ namespace THERAPP.Views
             {
                 if (i < 1)
                 {
-                    webView.Source = "https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true/"; //"https://test.webrtc.org/";
+                    webView.Source = "https://freetos.ml/video/nomeVideoChamada"; //"https://test.webrtc.org/";
                     App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
                     _button.Text = "Consulta de " + Global.Cliente.name;
                     i = i + 1;
@@ -66,27 +66,6 @@ namespace THERAPP.Views
             }
 
         }
-
-        private async void _buttonEnd_Clicked(object sender, EventArgs e)
-        {
-            var status = PermissionStatus.Unknown;
-
-            status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-
-            if (status != PermissionStatus.Granted)
-            {
-
-                status = await Utils.CheckPermissions(Permission.Camera);
-            }
-
-            if (status == PermissionStatus.Granted)
-            {
-                webView.Source = "https://freetos.ml/video/nomeVideoChamada#config.disableDeepLinking=true/"; //"https://test.webrtc.org/";
-                App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
-            }
-
-        }
-
 
         protected override void OnAppearing()
         {

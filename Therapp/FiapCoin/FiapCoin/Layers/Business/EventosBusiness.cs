@@ -10,6 +10,7 @@ namespace THERAPP.Layers.Business
         public IList<Evento> GetList()
         {
             IList<Evento> listaEventos;
+            List<Evento> listaProxEventos = new List<Evento>();
             List<Evento> listaHistorico = new List<Evento>();
 
             listaEventos = new Service.EventoService().Get();
@@ -24,7 +25,16 @@ namespace THERAPP.Layers.Business
             }
             Model.Global.Historico = listaHistorico;
 
-            return listaEventos;
+            today = today.AddHours(-1);
+            foreach (Evento evento in listaEventos)
+            {
+                if (evento.date > today)
+                {
+                    listaProxEventos.Add(evento);
+                }
+            }
+
+            return listaProxEventos;
         }
 
 

@@ -25,7 +25,6 @@
             <Label></Label>
             <ListView ItemsSource="{Binding ListaHistorico}" 
                           SelectedItem="{Binding ChatSelecionado}" 
-                          tapped:ItemTappedAttached.Command="{Binding ChatTappedCommand}"
                           HasUnevenRows="false">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -35,7 +34,6 @@
                                 <StackLayout HeightRequest="700" WidthRequest="500" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
                                     <Label FontSize="Small" Text="{Binding dateText}" WidthRequest="250" HeightRequest="250" FontAttributes=" Italic"></Label>
                                 </StackLayout>
-                                <Label HorizontalOptions="EndAndExpand" Text="Detalhes" WidthRequest="500" FontAttributes="Bold" FontSize="Medium"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

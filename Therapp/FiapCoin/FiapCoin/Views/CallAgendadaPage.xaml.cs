@@ -51,13 +51,13 @@ namespace THERAPP.Views
                 if (i < 1)
                 {
                     webView.Source = Model.Global.Evento.description.Substring(15); 
-                    App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nUm terapeuta já irá atende-lo...");
+                    App.MensagemAlerta(Global.Cliente.name + " agora é só aguardar!", "\nO terapeuta " +Model.Global.Evento.title.Substring(13)+" já irá atende-lo...");
                     _button.Text = "Consulta de " + Global.Cliente.name;
                     i = i + 1;
                 }
                 else
                 {
-                    App.MensagemAlerta("Por favor aguarde", "Um profissional já está a caminho...");
+                    App.MensagemAlerta("Por favor aguarde", "\nO terapeuta " + Model.Global.Evento.title.Substring(13) + " já está a caminho...");
                 }
             }
             else

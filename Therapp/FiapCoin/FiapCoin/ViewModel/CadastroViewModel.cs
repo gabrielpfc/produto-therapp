@@ -103,7 +103,7 @@ namespace THERAPP.ViewModel
                     if (cliente != null)
                     {
                         MessagingCenter.Send<CadastroViewModel>(this, "Cadastrar");
-                        App.MensagemAlerta("Estamos prontos para te atender", "\n Com base em sua ficha técnica você já foi associado ao Doutor mais próximo e especializado em seu perfil.");
+                        DependencyService.Get<IMessage>().ShortAlert("Estamos prontos para te atender!\n Com base em sua ficha técnica você já foi associado ao Doutor mais próximo e especializado em seu perfil.");
                     }
                 }
             });
